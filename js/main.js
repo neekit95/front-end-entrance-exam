@@ -1,24 +1,47 @@
-import '../css/style.css'
-import javascriptLogo from '../javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+document.addEventListener('DOMContentLoaded', () => {
+	const downloadBtn = document.getElementById('download-btn');
+	const editableElements = document.querySelectorAll('.editable');
+	
+	// Load saved data from LocalStorage
+	editableElements.forEach((element, index) => {
+		const savedData = localStorage.getItem(`editable-${index}`);
+		if (savedData) {
+			element.textContent = savedData;
+		}
+		
+		// Save data to LocalStorage on input
+		element.addEventListener('input', () => {
+			localStorage.setItem(`editable-${index}`, element.textContent);
+		});
+	});
+	
+	downloadBtn.addEventListener('click', () => {
+		const { jsPDF } = window.jspdf;
+		const doc = new jsPDF();
+		const resume = document.querySelector('.resume-container');
+		
+		doc.html(resume, {
+			callback: function (doc) {
+				doc.save('resume.pdf');
+			},
+			x: 10,
+			y: 10,
+			width: 180 // target width in the PDF document
+		});
+	});
+});
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector('#counter'))
+// Material Wave effect
+document.querySelectorAll('.material-wave').forEach(item => {
+	item.addEventListener('click', function (e) {
+		const circle = document.createElement('div');
+		this.appendChild(circle);
+		const d = Math.max(this.clientWidth, this.clientHeight);
+		circle.style.width = circle.style.height = `${d}px`;
+		const rect = this.getBoundingClientRect();
+		circle.style.left = `${e.clientX - rect.left - d / 2}px`;
+		circle.style.top = `${e.clientY - rect.top - d / 2}px`;
+		circle.classList.add('ripple');
+		setTimeout(() => circle.remove(), 600);
+	});
+});
