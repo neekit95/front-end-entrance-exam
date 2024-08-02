@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
 }
+
+div {
+  border: 0.1px solid black;
+
+}
 html, body {
   height: 100%;
   margin: 0;
@@ -24,7 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .top-section {
@@ -42,8 +47,6 @@ body {
   padding: 12px ;
   display: flex;
   flex-direction: column;
-  flex: 1;
-
 }
 
 .profile {
@@ -107,10 +110,13 @@ body {
   align-items: flex-start;
   box-sizing: border-box;
   gap: 16px;
+  flex: 1;
+
 }
 
-.languages h2 {
+h3 {
   font-weight: 500;
+  font-size: 22px;
 }
 .goal {
   display: flex;
@@ -118,7 +124,6 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
-  /*background-color: teal;*/
 }
 .lang {
   display: flex;
@@ -126,9 +131,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /*background-color: yellow;*/
   height: 80%;
-  /*width: 100%;*/
   gap: 15px;
   margin-top: 4px;
   padding: 0 16px 0 0;
@@ -140,8 +143,6 @@ body {
   width: 100%;
   height: 30%;
   font-size: 16px;
-  font-weight: 500;
-  /*background-color: white;*/
 }
 
 
@@ -168,4 +169,75 @@ body {
 
 .goal-line-70 {
   width: 70%;
+}
+
+.middle-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  min-height: 500px;
+  /*background-color: #54d262;*/
+  border: 1px solid black;
+  flex: 1;
+
+}
+
+.experience-block  {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: teal;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  flex: 1;
+}
+.experience-block :first-child {
+  background-color: #28D979 ;
+}
+.exp-block-job {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: greenyellow;
+  flex: 1;
+
+}
+.exp-block-job-name {
+  background-color: #fff;
+  padding-right: 24px;
+  min-width: 400px;
+}
+
+.tools {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  height: 100%;
+}
+
+.tools-block {
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 50%;
+  min-height: 200px;
+  text-align: center;
+}
+
+.tools-abs {
+  position: absolute;
+  top:-5%;
+  background-color: black;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 500;
 }
