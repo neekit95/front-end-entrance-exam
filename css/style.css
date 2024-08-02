@@ -255,13 +255,22 @@ h3 {
   background-color: #fff;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
   width: 70%;
-  min-height: 200px;
+  justify-content: center;
+  align-items: center;
+  /*min-height: 200px;*/
   text-align: center;
   border-radius: 6px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+}
 
+.tools-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .tools-abs {
@@ -273,4 +282,17 @@ h3 {
   border-radius: 15px;
   font-size: 10px;
   font-weight: 500;
+}
+
+.tools-img {
+  /*background-color: yellow;*/
+  /*flex: 1 1 50%;*/
+  /*margin-top: 20px;*/
+  /*width: 30px;*/
+  /*height: 30px;*/
+  object-fit: contain;
+
+  width: 30px;
+  height: 30px;
+  /*margin: 10px*/
 }
