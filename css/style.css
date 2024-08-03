@@ -173,7 +173,7 @@ h3 {
 .middle-section {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 20px;
   width: 100%;
   min-height: 500px;
@@ -243,28 +243,28 @@ h3 {
 }
 
 .tools {
-  width: 30%;
+  min-width: 20%;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  /*gap: 20px;*/
   align-items: center;
-  height: 100%;
 }
 
 .tools-block {
   background-color: #fff;
   position: relative;
   display: flex;
-  width: 70%;
   justify-content: center;
   align-items: center;
-  /*min-height: 200px;*/
   text-align: center;
   border-radius: 6px;
   flex-wrap: wrap;
-  padding: 30px 20px;
+  padding: 40px 40px;
 }
 
+.tools-h3 {
+  align-self: flex-start;
+}
 .tools-logos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -275,13 +275,16 @@ h3 {
 
 .tools-abs {
   position: absolute;
-  top:-5%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
   background-color: black;
   color: white;
   padding: 4px 12px;
   border-radius: 15px;
   font-size: 10px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .tools-img {
@@ -292,7 +295,7 @@ h3 {
   /*height: 30px;*/
   object-fit: contain;
 
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   /*margin: 10px*/
 }
