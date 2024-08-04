@@ -65,7 +65,7 @@ body {
 }
 
 .avatar {
-	min-width: 12.5rem;
+	/*min-width: 12.5rem;*/
 	height: 100%;
 	width: 50%;
 	overflow: hidden;
@@ -90,6 +90,7 @@ body {
 	height: 100%;
 	width: 50%;
 	box-sizing: border-box;
+	flex-grow: 1;
 }
 
 .hello {
@@ -122,7 +123,7 @@ body {
 	box-sizing: border-box;
 	gap: 1rem;
 	flex: 1;
-	padding: 20px;
+	padding: 10px 20px 20px 20px;
 }
 
 h3 {
@@ -139,7 +140,7 @@ h3 {
 	width: 100%;
 	min-height: 80%;
 	gap: 20px;
-
+	padding: 10px 0;
 }
 
 .lang-item {
@@ -243,9 +244,10 @@ h3 {
 	min-width: 20%;
 	max-width: 30%;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	justify-content: stretch;
+	align-items: stretch;
 	gap: 0.5rem;
+
 }
 
 .tools-block {
@@ -257,10 +259,13 @@ h3 {
 	border-radius: 0.375rem;
 	flex-wrap: wrap;
 	padding: 2.5rem;
+	flex-grow: 1;
+	height: 100%;
 }
 
 .tools-h3 {
 	align-self: flex-start;
+	text-wrap: nowrap;
 }
 
 .tools-logos {
@@ -349,8 +354,9 @@ h3 {
 .interests {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: flex-start;
+	height: 100%;
 }
 
 .education h3 {
@@ -563,11 +569,115 @@ ul {
 		flex-direction: row;
 		width: 100%;
 		max-width: 100%;
-		/*background-color: red;*/
+
 	}
 	.tools-block {
-		height: 100%;
-		max-height: 100%;
-		background-color: red;
+		max-height: 60%;
+		max-width: 40%;
+		padding: 20px 20px;
+
 	}
+	.tools-logos {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+	}
+
+	.bottom-section {
+		flex-direction: column;
+	}
+	.bottom-right {
+		flex-grow: 1;
+		max-width: 100%;
+	}
+	.interests {
+		position: relative;
+
+		margin-top: 40px;
+		background-color: red;
+		flex-grow: 1;
+		flex-direction: row;
+		width: 100%;
+	}
+	.interests-p {
+		background-color: teal;
+		width: 50%;
+	}
+	.chat {
+		width: 50%;
+		background-color: #fff;
+	}
+}
+
+@media (max-width: 620px) {
+	html, body {
+		font-size: 16px;
+	}
+	.top-section {
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+	}
+	.profile {
+		display: grid; /* Устанавливаем grid-контейнер */
+		grid-template-columns: repeat(2, 1fr); /* Создаем колонки с минимальной шириной 150px и автоматическим заполнением пространства */
+		gap: 1rem; /* Расстояние между элементами */
+		align-items: center; /* Выравнивание элементов по высоте */
+		justify-items: center; /* Центрирование элементов в их ячейках */
+		width: 100%; /* Ширина профиля на 100% */
+	}
+	.profile .avatar, .profile .profile-info {
+		max-width: 100%; /* Аватар и инфо-блоки будут занимать максимальную ширину своей ячейки */
+		width: 100%;
+	}
+	.tools-block {
+		max-height: 100%;
+		height: 100% !important;
+		max-width: 30%;
+		padding: 20px 20px;
+
+	}
+	.tools-logos {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+	}
+
+	.exp-block-job {
+		flex-direction: column;
+	}
+	.exp-block-job-name {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20px;
+
+	}
+}
+
+@media (max-width: 522px) {
+	.tools {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap:20px;
+	}
+	.tools-block {
+		max-width: 100%;
+	}
+	.tools-logos {
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+	}
+
+;
 }
