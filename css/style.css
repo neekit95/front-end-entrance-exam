@@ -11,6 +11,7 @@ html, body {
 	margin: 0;
 	box-sizing: border-box;
 	font-size: 16px;
+	padding: 0 5px 5px 5px;
 }
 
 body {
@@ -352,11 +353,28 @@ h3 {
 }
 
 .interests {
+	/*border: 1px solid #000;*/
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	/*flex-wrap: wrap;*/
+	/*justify-content: space-between;*/
+	/*align-items: flex-start;*/
+	height: 100%;
+}
+.interests h3 {
+	width: 100%;
+	word-break: normal;
+}
+.int-cont {
+	display: flex;
+	/*flex-wrap: wrap;*/
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
 	height: 100%;
+	gap: 30px;
+	/*background-color: red;*/
+
 }
 
 .education h3 {
@@ -391,7 +409,7 @@ h3 {
 .interests {
 	padding: 1.25rem;
 	display: flex;
-	flex-wrap: wrap;
+	/*flex-wrap: wrap;*/
 	gap: 1.875rem;
 	width: 100%;
 	min-width: 18.75rem;
@@ -595,20 +613,19 @@ ul {
 	}
 	.interests {
 		position: relative;
-
 		margin-top: 40px;
-		background-color: red;
 		flex-grow: 1;
-		flex-direction: row;
+		flex-direction: column;
 		width: 100%;
 	}
+	.int-cont {
+		flex-direction: row;
+	}
 	.interests-p {
-		background-color: teal;
 		width: 50%;
 	}
 	.chat {
 		width: 50%;
-		background-color: #fff;
 	}
 }
 
@@ -661,6 +678,11 @@ ul {
 }
 
 @media (max-width: 522px) {
+.education-blocks {
+	grid-template-columns: repeat(1, 1fr);}
+	html, body {
+		font-size: 14px;
+	}
 	.tools {
 		flex-direction: column;
 		justify-content: flex-start;
@@ -676,8 +698,22 @@ ul {
 		justify-content: flex-start;
 		align-items: flex-start;
 		flex-wrap: wrap;
-
 	}
-
+	.interests {
+		width: 100%;
+		/*background-color: red;*/
+	}
+	.int-cont {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+	}
+	.interests-p {
+		width: 100%;
+	}
+	.chat {
+		width: 100%;
+	}
 ;
 }
