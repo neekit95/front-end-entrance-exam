@@ -11,7 +11,6 @@ html, body {
 	margin: 0;
 	box-sizing: border-box;
 	font-size: 16px;
-	/*padding: 0 5px 5px 5px;*/
 	min-width: 320px;
 }
 
@@ -70,11 +69,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/*min-width: 12.5rem;*/
-	/*height: 100%;*/
 	width: 50%;
 	overflow: hidden;
-
 }
 
 .profile-pic {
@@ -91,13 +87,9 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	/*min-width: 12.5rem;*/
-	/*max-width: 25rem;*/
-	/*height: 100%;*/
 	width: 50%;
 	height: 3fr;
 	box-sizing: border-box;
-	/*flex-grow: 1;*/
 }
 
 .hello {
@@ -111,7 +103,6 @@ body {
 	margin: 0;
 	font-weight: 500;
 	line-height: 1.5rem;
-	/*min-width: 100%;*/
 	white-space: wrap;
 }
 
@@ -119,7 +110,6 @@ body {
 	font-size: 1rem;
 	color: #5C5C5C;
 	margin: 0.75rem 0 0 0;
-	/*min-width: 100%;*/
 }
 
 .languages {
@@ -236,7 +226,6 @@ h3 {
 
 .exp-block-job-name {
 	padding-right: 1.5rem;
-	/*min-width: 18.75rem;*/
 }
 
 .exp-block-job-name h4 {
@@ -318,7 +307,6 @@ h3 {
 .education {
 	gap: 1.25rem;
 	padding: 1.25rem 0.625rem;
-	/*max-width: 70%;*/
 	width: 70%;
 }
 
@@ -360,16 +348,10 @@ h3 {
 }
 
 .interests {
-	/*border: 1px solid #000;*/
 	display: flex;
 	flex-direction: column;
-	/*flex-wrap: wrap;*/
-	/*justify-content: space-between;*/
-	/*align-items: flex-start;*/
 	height: 100%;
-	/*min-width: 300px;*/
 	width: 30%;
-	background-color: red;
 }
 
 .interests h3 {
@@ -379,14 +361,11 @@ h3 {
 
 .int-cont {
 	display: flex;
-	/*flex-wrap: wrap;*/
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
 	height: 100%;
 	gap: 30px;
-	/*background-color: red;*/
-
 }
 
 .education h3 {
@@ -421,10 +400,8 @@ h3 {
 .interests {
 	padding: 1.25rem;
 	display: flex;
-	/*flex-wrap: wrap;*/
 	gap: 1.875rem;
 	width: 100%;
-	/*min-width: 18.75rem;*/
 	margin: auto;
 	min-height: 60%;
 }
@@ -657,18 +634,7 @@ ul {
 	}
 
 	.profile {
-		/*padding: 20px 0;*/
-		/*display: grid;*/
-		/*grid-template-columns: repeat(2, 1fr);*/
-		/*gap: 1rem;*/
-		/*align-items: flex-start;*/
-		/*justify-items: center;*/
-		/*width: 100%;*/
-		/*height: 100%;*/
-		/*!*max-height: none;*!*/
-		/*overflow: hidden;*/
 		height: 100%;
-		/*max-height: 100px;*/
 		display: flex;
 		width: 100%;
 		justify-content: center;
@@ -678,12 +644,10 @@ ul {
 	}
 
 	.profile-info .avatar {
-		/*width: 50%;*/
 		width: 100%;
 		padding: 0;
 		margin: 0;
 		height: 100%;
-
 	}
 
 	.tools-block {
@@ -721,7 +685,6 @@ ul {
 	}
 
 
-
 	.education-blocks {
 		grid-template-columns: repeat(1, 1fr);
 		width: 100%;
@@ -754,14 +717,12 @@ ul {
 	.interests {
 		width: 100%;
 		margin-top: 10px;
-		/*background-color: red;*/
 	}
 
 	.int-cont {
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: flex-start;
-		/*padding: 20px;*/
 		width: 100%;
 	}
 
