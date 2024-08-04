@@ -319,7 +319,7 @@ h3 {
 .education {
 	gap: 1.25rem;
 	padding: 1.25rem 0.625rem;
-	max-width: 70%;
+	/*max-width: 70%;*/
 }
 
 .education-blocks {
@@ -690,8 +690,18 @@ ul {
 }
 
 @media (max-width: 522px) {
+	.bottom-section {
+		gap: 10px;
+	}
+	.education {
+		width: 100%;
+		max-width: 100%;
+	}
 .education-blocks {
-	grid-template-columns: repeat(1, 1fr);}
+	grid-template-columns: repeat(1, 1fr);
+	width: 100%;
+	max-width: 100%;
+}
 	html, body {
 		font-size: 14px;
 	}
@@ -713,6 +723,7 @@ ul {
 	}
 	.interests {
 		width: 100%;
+		margin-top: 10px;
 		/*background-color: red;*/
 	}
 	.int-cont {
