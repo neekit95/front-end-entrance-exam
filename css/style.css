@@ -12,6 +12,7 @@ html, body {
 	box-sizing: border-box;
 	font-size: 16px;
 	padding: 0 5px 5px 5px;
+	min-width: 320px;
 }
 
 body {
@@ -105,7 +106,7 @@ body {
 	margin: 0;
 	font-weight: 500;
 	line-height: 1.5rem;
-	min-width: 100%;
+	/*min-width: 100%;*/
 	white-space: wrap;
 }
 
@@ -113,7 +114,7 @@ body {
 	font-size: 1rem;
 	color: #5C5C5C;
 	margin: 0.75rem 0 0 0;
-	min-width: 100%;
+	/*min-width: 100%;*/
 }
 
 .languages {
@@ -231,7 +232,7 @@ h3 {
 
 .exp-block-job-name {
 	padding-right: 1.5rem;
-	min-width: 18.75rem;
+	/*min-width: 18.75rem;*/
 }
 
 .exp-block-job-name h4 {
@@ -242,7 +243,7 @@ h3 {
 }
 
 .tools {
-	min-width: 20%;
+	/*min-width: 20%;*/
 	max-width: 30%;
 	display: flex;
 	justify-content: stretch;
@@ -412,7 +413,7 @@ h3 {
 	/*flex-wrap: wrap;*/
 	gap: 1.875rem;
 	width: 100%;
-	min-width: 18.75rem;
+	/*min-width: 18.75rem;*/
 	margin: auto;
 	min-height: 60%;
 }
@@ -639,15 +640,19 @@ ul {
 		justify-content: center;
 	}
 	.profile {
-		display: grid; /* Устанавливаем grid-контейнер */
-		grid-template-columns: repeat(2, 1fr); /* Создаем колонки с минимальной шириной 150px и автоматическим заполнением пространства */
-		gap: 1rem; /* Расстояние между элементами */
-		align-items: center; /* Выравнивание элементов по высоте */
-		justify-items: center; /* Центрирование элементов в их ячейках */
-		width: 100%; /* Ширина профиля на 100% */
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		align-items: center;
+		justify-items: center;
+		width: 100%;
+		max-height: none;
+		overflow: hidden;
+		height: 100%;
 	}
 	.profile .avatar, .profile .profile-info {
-		max-width: 100%; /* Аватар и инфо-блоки будут занимать максимальную ширину своей ячейки */
+		max-width: 100%;
+		max-height: 100%;
 		width: 100%;
 	}
 	.tools-block {
@@ -715,5 +720,10 @@ ul {
 	.chat {
 		width: 100%;
 	}
-;
 }
+
+/*@media (max-width: 390px) {*/
+/*	body{*/
+/*		background-color: red;*/
+/*	};*/
+/*}*/
