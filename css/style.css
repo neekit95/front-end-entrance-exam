@@ -80,7 +80,9 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	width: 200px;
+	min-width: 200px;
+	/*max-width: 40%;*/
+	max-width: 400px;
 	height: 100%;
 	box-sizing: border-box;
 }
@@ -96,12 +98,20 @@ body {
 	margin: 0;
 	font-weight: 500;
 	line-height: 24px;
+	min-width: 100%;
+	white-space: wrap;
+	/*background-color: red;*/
 }
 
 .profile-info-down p {
 	font-size: 16px;
 	color: #5C5C5C;
 	margin: 12px 0 0 0;
+	padding: 0 10px 0 0;
+	min-width: 100%;
+	/*background-color: red;*/
+
+
 }
 
 .languages {
@@ -149,7 +159,8 @@ h3 {
 	width: 100%;
 	height: 30%;
 	font-size: 16px;
-	overflow: scroll;
+	/*overflow: scroll;*/
+	text-wrap: wrap;
 }
 
 
@@ -419,6 +430,9 @@ h3 {
 	width: 100%;
 	padding: 20px;
 }
+.chat p {
+	margin-top: 20px;
+}
 
 .download {
 	width: 100%;
@@ -430,6 +444,7 @@ h3 {
 }
 
 .download button {
+	transition: background-color 0.3s, transform 0.3s;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	padding: 20px 30px;
@@ -444,8 +459,86 @@ h3 {
 .download button:hover {
 	cursor: pointer;
 	background-color: #3ae386;
+	transform: scale(1.05);
+
 }
 
 .download button:active {
 	background-color: #55ec98;
 }
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.editable {
+	animation: fadeIn 0.3s ease-in-out;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+.tools-abs .editable {
+	animation: none; /* Убираем анимацию */
+	transition: none; /* Убираем переходы */
+}
+
+.tools-abs {
+	animation: toolsAbsAnimation 1s ease-in-out;
+	/*animation: toolsAbsAnimation 2s infinite;*/
+}
+
+@keyframes toolsAbsAnimation {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.editable:focus {
+	/*margin: 1%;*/
+	/*padding: 1%;*/
+	outline: none;
+	z-index: 100;
+	transform: scale(1.01);
+	background-color: rgba(52, 152, 219, 0.1);
+	transition: all 0.3s ease;
+	box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+	cursor: text;
+}
+
+.editable:hover {
+	/*border-bottom: 1px solid red;*/
+	transition: all 0.3s ease;
+	box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+
+.editable:focus h5,
+.editable:focus p,
+.editable:focus h4,
+.editable:focus h3 {
+	transform: scale(1.05); /* Увеличение текста */
+	transition: all 0.3s ease; /* Плавный переход */
+}
+.save-success {
+	animation: highlight 1s ease-out;
+}
+
+@keyframes highlight {
+	0% {
+		background-color: rgba(52, 152, 219, 0.1); /* Начальный цвет */
+	}
+	100% {
+		background-color: transparent; /* Конечный цвет */
+	}
+}
+

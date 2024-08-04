@@ -34,3 +34,17 @@ document.getElementById('downloadBtn').addEventListener('click', async function 
 		console.error('Error generating PDF:', error);
 	}
 });
+//
+// function highlightElement(element) {
+// 	element.classList.add('save-success');
+// 	setTimeout(() => {
+// 		element.classList.remove('save-success');
+// 	}, 1000); // Время анимации
+// }
+//
+// // Пример использования:
+// document.querySelectorAll('.editable').forEach(el => {
+// 	el.addEventListener('input', () => {
+// 		highlightElement(el);
+// 	});
+// });
