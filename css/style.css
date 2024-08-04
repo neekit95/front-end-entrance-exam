@@ -178,7 +178,6 @@ h3 {
 }
 
 
-
 .middle-section {
 	display: flex;
 	justify-content: space-between;
@@ -320,6 +319,7 @@ h3 {
 	gap: 1.25rem;
 	padding: 1.25rem 0.625rem;
 	/*max-width: 70%;*/
+	width: 70%;
 }
 
 .education-blocks {
@@ -367,11 +367,16 @@ h3 {
 	/*justify-content: space-between;*/
 	/*align-items: flex-start;*/
 	height: 100%;
+	/*min-width: 300px;*/
+	width: 30%;
+	background-color: red;
 }
+
 .interests h3 {
 	width: 100%;
 	word-break: normal;
 }
+
 .int-cont {
 	display: flex;
 	/*flex-wrap: wrap;*/
@@ -391,7 +396,7 @@ h3 {
 
 .education-date {
 	font-size: 1.25rem;
-   margin-bottom: 0.9375rem;
+	margin-bottom: 0.9375rem;
 }
 
 .education-name h3 {
@@ -573,25 +578,30 @@ ul {
 	html, body {
 		font-size: 14px;
 	}
+
 	.middle-section {
 		flex-direction: column;
 	}
+
 	.experience {
 		width: 100%;
 		max-width: 100%;
 	}
+
 	.tools {
 		flex-direction: row;
 		width: 100%;
 		max-width: 100%;
 
 	}
+
 	.tools-block {
 		max-height: 60%;
 		max-width: 40%;
 		padding: 20px 20px;
 
 	}
+
 	.tools-logos {
 
 		display: flex;
@@ -604,10 +614,12 @@ ul {
 	.bottom-section {
 		flex-direction: column;
 	}
+
 	.bottom-right {
 		flex-grow: 1;
 		max-width: 100%;
 	}
+
 	.interests {
 		position: relative;
 		margin-top: 40px;
@@ -615,14 +627,21 @@ ul {
 		flex-direction: column;
 		width: 100%;
 	}
+
 	.int-cont {
 		flex-direction: row;
 	}
+
 	.interests-p {
 		width: 50%;
 	}
+
 	.chat {
 		width: 50%;
+	}
+	.education {
+		width: 100%;
+		max-width: 100%;
 	}
 }
 
@@ -630,11 +649,13 @@ ul {
 	html, body {
 		font-size: 16px;
 	}
+
 	.top-section {
 		flex-direction: column;
 		align-items: stretch;
 		justify-content: center;
 	}
+
 	.profile {
 		/*padding: 20px 0;*/
 		/*display: grid;*/
@@ -652,17 +673,19 @@ ul {
 		width: 100%;
 		justify-content: center;
 		align-items: stretch;
-		padding:0;
+		padding: 0;
 		margin: 0;
 	}
+
 	.profile-info .avatar {
 		/*width: 50%;*/
 		width: 100%;
-		padding:0;
+		padding: 0;
 		margin: 0;
 		height: 100%;
 
 	}
+
 	.tools-block {
 		max-height: 100%;
 		height: 100% !important;
@@ -670,6 +693,7 @@ ul {
 		padding: 20px 20px;
 
 	}
+
 	.tools-logos {
 
 		display: flex;
@@ -682,6 +706,7 @@ ul {
 	.exp-block-job {
 		flex-direction: column;
 	}
+
 	.exp-block-job-name {
 		display: flex;
 		flex-direction: column;
@@ -694,27 +719,30 @@ ul {
 	.bottom-section {
 		gap: 10px;
 	}
-	.education {
+
+
+
+	.education-blocks {
+		grid-template-columns: repeat(1, 1fr);
 		width: 100%;
 		max-width: 100%;
 	}
-.education-blocks {
-	grid-template-columns: repeat(1, 1fr);
-	width: 100%;
-	max-width: 100%;
-}
+
 	html, body {
 		font-size: 14px;
 	}
+
 	.tools {
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
-		gap:20px;
+		gap: 20px;
 	}
+
 	.tools-block {
 		max-width: 100%;
 	}
+
 	.tools-logos {
 
 		display: flex;
@@ -722,28 +750,26 @@ ul {
 		align-items: flex-start;
 		flex-wrap: wrap;
 	}
+
 	.interests {
 		width: 100%;
 		margin-top: 10px;
 		/*background-color: red;*/
 	}
+
 	.int-cont {
 		flex-direction: column;
-		align-items: flex-start	;
+		align-items: flex-start;
 		justify-content: flex-start;
 		/*padding: 20px;*/
 		width: 100%;
 	}
+
 	.interests-p {
 		width: 100%;
 	}
+
 	.chat {
 		width: 100%;
 	}
 }
-
-/*@media (max-width: 390px) {*/
-/*	body{*/
-/*		background-color: red;*/
-/*	};*/
-/*}*/
