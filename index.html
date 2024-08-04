@@ -9,9 +9,11 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 	      rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" id="content">
 	<section class="top-section">
 		<div class="profile">
 			<div class="avatar">
@@ -19,7 +21,7 @@
 			</div>
 			<div class="gray-section profile-info">
 				<div class="hello">Hello 👋🏻 I’m</div>
-				<div class="profile-info-down">
+				<div class="profile-info-down" contenteditable="true">
 					<h5>Karthik SR</h5>
 					<p>UX/UI Designer</p>
 				</div>
@@ -29,9 +31,9 @@
 			<h3>Languages</h3>
 			<div class="goal">
 				<div class="lang">
-					<p>English</p>
-					<p>Malayalam</p>
-					<p>Hindi</p>
+					<p contenteditable="true">English</p>
+					<p contenteditable="true">Malayalam</p>
+					<p contenteditable="true">Hindi</p>
 				</div>
 				<div class="goal-lines">
 					<div class="goal-line"></div>
@@ -48,8 +50,8 @@
 
 			<h3 class="exp-h3">Experience</h3>
 
-			<div class="experience-block-top">
-				<div class="recent"> most recent</div>
+			<div class="experience-block-top" contenteditable="true">
+				<div class="recent" contenteditable="false"> most recent</div>
 				<div class="exp-block-date">
 					Jun. 2023 - Present
 				</div>
@@ -76,7 +78,7 @@
 				</div>
 			</div>
 
-			<div class="experience-block">
+			<div class="experience-block" contenteditable="true">
 				<div class="exp-block-date">
 					2014 - Present
 				</div>
@@ -107,7 +109,7 @@
 				</div>
 			</div>
 
-			<div class="experience-block">
+			<div class="experience-block" contenteditable="true">
 				<div class="exp-block-date">
 					Sep. 2021 - Jun. 2023
 				</div>
@@ -141,7 +143,7 @@
 		<div class="tools gray-section">
 			<h3 class="tools-h3">Tools</h3>
 			<div class="tools-block">
-				<h5 class="tools-abs">design</h5>
+				<h5 class="tools-abs" contenteditable="true">design</h5>
 
 				<div class="tools-logos">
 					<img class="tools-img" src="./public/images/tools-logos/logoFigma.svg" alt="logoFigma">
@@ -156,7 +158,7 @@
 
 			</div>
 			<div class="tools-block">
-				<h5 class="tools-abs">no-code</h5>
+				<h5 class="tools-abs" contenteditable="true">no-code</h5>
 				<div class="tools-logos">
 					<img class="tools-img" src="./public/images/tools-logos/logoZapier.svg" alt="logoZapier">
 					<img class="tools-img" src="./public/images/tools-logos/logoWebflow.svg" alt="logoWebflow">
@@ -167,7 +169,7 @@
 
 			</div>
 			<div class="tools-block">
-				<h5 class="tools-abs">artoficial intelligence</h5>
+				<h5 class="tools-abs" contenteditable="true">artoficial intelligence</h5>
 				<div class="tools-logos">
 					<img class="tools-img" src="./public/images/tools-logos/logoChatGPT.svg" alt="logoChatGPT">
 					<img class="tools-img" src="./public/images/tools-logos/logoCopilot.svg" alt="logoCopilot">
@@ -180,7 +182,7 @@
 		<div class="gray-section education">
 			<h3>Education</h3>
 			<div class="education-blocks">
-				<div class="education-block education-block-first">
+				<div class="education-block education-block-first" contenteditable="true">
 
 					<div class="education-favorite">
 						<img src="./public/images/like.svg">
@@ -200,7 +202,7 @@
 						Coursera
 					</p>
 				</div>
-				<div class="education-block">
+				<div contenteditable="true" class="education-block">
 
 					<p class="education-date">
 						2017 - 2022
@@ -216,7 +218,7 @@
 						University of Kerala
 					</p>
 				</div>
-				<div class="education-block">
+				<div contenteditable="true" class="education-block">
 
 					<p class="education-date">
 						2017
@@ -238,33 +240,38 @@
 		<div class="bottom-right">
 			<div class="interests gray-section">
 				<h3>Interests</h3>
-				<div class="interests-p">
-					<p>branding</p>
-					<p>design</p>
-					<p>photography</p>
-					<p>artifical intellegence</p>
-					<p>illustration</p>
-					<p>typography</p>
-					<p>social networks</p>
-					<p>research</p>
-					<p>dron pilot</p>
-					<p>games</p>
+				<div class="interests-p" contenteditable="true">
+					<div class="interests-p" contenteditable="true">
+						<p>branding</p>
+						<p>design</p>
+						<p>photography</p>
+						<p>artifical intellegence</p>
+						<p>illustration</p>
+						<p>typography</p>
+						<p>social networks</p>
+						<p>research</p>
+						<p>dron pilot</p>
+						<p>games</p>
+					</div>
+
 				</div>
 
-			</div>
-
-			<div class="chat">
-				<h3>Let's chat! I'm ready to work on exciting projects </h3>
-				<p>srkarthik.designscape@gmail.com</p>
+				<div class="chat" contenteditable="true">
+					<h3>Let's chat! I'm ready to work on exciting projects </h3>
+					<p>srkarthik.designscape@gmail.com</p>
+				</div>
 			</div>
 		</div>
 	</section>
-	<section class="download">
-		<button>
-			Download my CV
-		</button>
-	</section>
+
 </div>
+
+<section class="download">
+	<button id="downloadBtn">Download as PDF</button>
+</section>
+
+
+<script src="js/main.js"></script>
 </body>
 </html>
 

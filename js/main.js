@@ -1,47 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-	const downloadBtn = document.getElementById('download-btn');
-	const editableElements = document.querySelectorAll('.editable');
+document.getElementById('downloadBtn').addEventListener('click', async function () {
+	const content = document.getElementById('content');
 	
-	// Load saved data from LocalStorage
-	editableElements.forEach((element, index) => {
-		const savedData = localStorage.getItem(`editable-${index}`);
-		if (savedData) {
-			element.textContent = savedData;
+	// Проверка, что элемент существует
+	if (!content) {
+		console.error('Element with ID "content" not found.');
+		return;
+	}
+	
+	// Загружаем модули из jsPDF
+	const { jsPDF } = window.jspdf;
+	
+	try {
+		const canvas = await html2canvas(content);
+		const imgData = canvas.toDataURL('image/png');
+		const pdf = new jsPDF('p', 'mm', 'a4');
+		const imgWidth = 210;
+		const pageHeight = 295;
+		const imgHeight = canvas.height * imgWidth / canvas.width;
+		let heightLeft = imgHeight;
+		let position = 0;
+		
+		pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+		heightLeft -= pageHeight;
+		
+		while (heightLeft >= 0) {
+			position = heightLeft - imgHeight;
+			pdf.addPage();
+			pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+			heightLeft -= pageHeight;
 		}
-		
-		// Save data to LocalStorage on input
-		element.addEventListener('input', () => {
-			localStorage.setItem(`editable-${index}`, element.textContent);
-		});
-	});
-	
-	downloadBtn.addEventListener('click', () => {
-		const { jsPDF } = window.jspdf;
-		const doc = new jsPDF();
-		const resume = document.querySelector('.resume-container');
-		
-		doc.html(resume, {
-			callback: function (doc) {
-				doc.save('resume.pdf');
-			},
-			x: 10,
-			y: 10,
-			width: 180 // target width in the PDF document
-		});
-	});
-});
-
-// Material Wave effect
-document.querySelectorAll('.material-wave').forEach(item => {
-	item.addEventListener('click', function (e) {
-		const circle = document.createElement('div');
-		this.appendChild(circle);
-		const d = Math.max(this.clientWidth, this.clientHeight);
-		circle.style.width = circle.style.height = `${d}px`;
-		const rect = this.getBoundingClientRect();
-		circle.style.left = `${e.clientX - rect.left - d / 2}px`;
-		circle.style.top = `${e.clientY - rect.top - d / 2}px`;
-		circle.classList.add('ripple');
-		setTimeout(() => circle.remove(), 600);
-	});
+		pdf.save('page.pdf');
+	} catch (error) {
+		console.error('Error generating PDF:', error);
+	}
 });
