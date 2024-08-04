@@ -3,8 +3,12 @@
 	margin: 0;
 	padding: 0;
 	outline: none;
-	overflow-wrap: break-word;
+	/*overflow-wrap: break-word;*/
+	word-break: break-word;
+
 }
+
+
 
 html, body {
 	height: 100%;
@@ -50,7 +54,8 @@ body {
 	padding: 12px;
 	display: flex;
 	flex-direction: column;
-	word-break: break-all;
+	word-break: break-word;
+
 }
 
 .profile {
@@ -107,7 +112,7 @@ body {
 	font-size: 16px;
 	color: #5C5C5C;
 	margin: 12px 0 0 0;
-	padding: 0 10px 0 0;
+	/*padding: 0 10px 0 0;*/
 	min-width: 100%;
 	/*background-color: red;*/
 
@@ -159,8 +164,9 @@ h3 {
 	width: 100%;
 	height: 30%;
 	font-size: 16px;
-	/*overflow: scroll;*/
-	text-wrap: wrap;
+	overflow: scroll;
+	/*text-wrap: wrap;*/
+
 }
 
 
@@ -200,6 +206,8 @@ h3 {
 
 .experience {
 	gap: 20px;
+	max-width:80%;
+	overflow: scroll;
 }
 
 .experience-block, .experience-block-top {
@@ -216,6 +224,7 @@ h3 {
 	border-radius: 25px;
 	background-color: #28D979;
 	color: white;
+	word-break: break-word;
 }
 
 .experience-block {
@@ -378,7 +387,7 @@ h3 {
 }
 
 .education-name h3 {
-	padding-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .hashtags {
@@ -467,58 +476,62 @@ h3 {
 	background-color: #55ec98;
 }
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
+/*@keyframes fadeIn {*/
+/*	from {*/
+/*		opacity: 1; !* Конечное состояние *!*/
+/*		transform: translateY(0); !* Конечное положение *!*/
+/*	}*/
+/*	to {*/
+/*		!*opacity: 0; !* Исходное состояние *!*!*/
+/*		transform: translateY(-40px); !* Исходное положение выше *!*/
+/*	}*/
+/*}*/
 
-.editable {
-	animation: fadeIn 0.3s ease-in-out;
+
+.editable, .editable-black {
+	/*animation: fadeIn 0.6s ease-in-out;*/
 	transition: all 0.3s ease;
 	cursor: pointer;
-}
-.tools-abs .editable {
-	animation: none; /* Убираем анимацию */
-	transition: none; /* Убираем переходы */
+
 }
 
-.tools-abs {
-	animation: toolsAbsAnimation 1s ease-in-out;
-	/*animation: toolsAbsAnimation 2s infinite;*/
-}
 
-@keyframes toolsAbsAnimation {
-	0% {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(1.1);
-	}
-	100% {
-		transform: scale(1);
-	}
+.editable:focus,.editable-black:focus {
+	outline: none;
+	z-index: 100;
+	cursor: text;
+	transition: all 0.3s ease;
+
 }
 
 .editable:focus {
-	/*margin: 1%;*/
-	/*padding: 1%;*/
-	outline: none;
-	z-index: 100;
-	transform: scale(1.01);
+	transform: scale(1.05);
 	background-color: rgba(52, 152, 219, 0.1);
 	transition: all 0.3s ease;
 	box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
-	cursor: text;
+	border-radius: 10px;
+}
+.editable-black:focus {
+	transition: all 0.3s ease;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .editable:hover {
-	/*border-bottom: 1px solid red;*/
 	transition: all 0.3s ease;
 	box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+	/*cursor: pointer;*/
+	border-radius: 10px;
+
+
+}
+.editable-black:hover {
+	/*cursor: pointer;*/
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	transition: all 0.3s ease;
+	border-radius: 10px;
+
+
 }
 
 
@@ -529,16 +542,36 @@ h3 {
 	transform: scale(1.05); /* Увеличение текста */
 	transition: all 0.3s ease; /* Плавный переход */
 }
-.save-success {
-	animation: highlight 1s ease-out;
+p, h3, h4, h5, li {
+	padding: 5px;
+}
+ul {
+	padding-left: 20px;
+	list-style: disc !important;
 }
 
-@keyframes highlight {
-	0% {
-		background-color: rgba(52, 152, 219, 0.1); /* Начальный цвет */
-	}
-	100% {
-		background-color: transparent; /* Конечный цвет */
-	}
+
+/* Основной контейнер для эффекта */
+.ripple-container {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
 }
 
+/* Элемент эффекта */
+.ripple {
+	position: absolute;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.3);
+	transform: scale(0);
+	pointer-events: none;
+	animation: ripple-animation 0.6s linear;
+}
+
+/* Анимация эффекта */
+@keyframes ripple-animation {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
