@@ -729,9 +729,10 @@ ul {
 	}
 	.int-cont {
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 20px;
+		align-items: flex-start	;
+		justify-content: flex-start;
+		/*padding: 20px;*/
+		width: 100%;
 	}
 	.interests-p {
 		width: 100%;
