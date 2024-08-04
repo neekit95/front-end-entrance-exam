@@ -44,6 +44,7 @@ body {
 	align-items: stretch;
 	gap: 1.25rem;
 	width: 100%;
+	height: 100%;
 	min-height: 12.5rem;
 }
 
@@ -63,14 +64,17 @@ body {
 	justify-content: space-between;
 	gap: 1.25rem;
 	width: 50%;
-
 }
 
 .avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	/*min-width: 12.5rem;*/
-	height: 100%;
+	/*height: 100%;*/
 	width: 50%;
 	overflow: hidden;
+
 }
 
 .profile-pic {
@@ -88,11 +92,12 @@ body {
 	justify-content: space-between;
 	align-items: flex-start;
 	/*min-width: 12.5rem;*/
-	max-width: 25rem;
-	height: 100%;
+	/*max-width: 25rem;*/
+	/*height: 100%;*/
 	width: 50%;
+	height: 3fr;
 	box-sizing: border-box;
-	flex-grow: 1;
+	/*flex-grow: 1;*/
 }
 
 .hello {
@@ -243,7 +248,7 @@ h3 {
 }
 
 .tools {
-	/*min-width: 20%;*/
+	width: 30%;
 	max-width: 30%;
 	display: flex;
 	justify-content: stretch;
@@ -314,6 +319,7 @@ h3 {
 .education {
 	gap: 1.25rem;
 	padding: 1.25rem 0.625rem;
+	max-width: 70%;
 }
 
 .education-blocks {
@@ -561,17 +567,6 @@ ul {
 	}
 }
 
-/*@media (max-width: 1100px) {*/
-/*	.profile {*/
-/*		max-width: 50%;*/
-/*	}*/
-/*	.profile-info, .avatar {*/
-/*		width: 50%;*/
-/*	}*/
-/*	.languages {*/
-/*		max-width: 50%;*/
-/*	}*/
-/*}*/
 
 @media (max-width: 900px) {
 	html, body {
@@ -640,20 +635,32 @@ ul {
 		justify-content: center;
 	}
 	.profile {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
-		align-items: center;
-		justify-items: center;
-		width: 100%;
-		/*max-height: none;*/
-		overflow: hidden;
+		/*padding: 20px 0;*/
+		/*display: grid;*/
+		/*grid-template-columns: repeat(2, 1fr);*/
+		/*gap: 1rem;*/
+		/*align-items: flex-start;*/
+		/*justify-items: center;*/
+		/*width: 100%;*/
+		/*height: 100%;*/
+		/*!*max-height: none;*!*/
+		/*overflow: hidden;*/
 		height: 100%;
-	}
-	.profile .avatar, .profile .profile-info {
-		max-width: 100%;
-		max-height: 100%;
+		/*max-height: 100px;*/
+		display: flex;
 		width: 100%;
+		justify-content: center;
+		align-items: stretch;
+		padding:0;
+		margin: 0;
+	}
+	.profile-info .avatar {
+		/*width: 50%;*/
+		width: 100%;
+		padding:0;
+		margin: 0;
+		height: 100%;
+
 	}
 	.tools-block {
 		max-height: 100%;
